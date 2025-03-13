@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Conversion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="..//css/currencyconversion.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+      <img src="..//images/new pi1.jpg" alt="Logo">
+      <a class="navbar-brand" href="#">Metric Conversion</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Conversion</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Length converstion.html">Length</a></li>
+              <li><a class="dropdown-item" href="areaconversion.html">Area</a></li>
+              <li><a class="dropdown-item" href="Tempconversion.html">Temperature</a></li>
+              <li><a class="dropdown-item" href="massconversion.html">Mass</a></li>
+              <li><a class="dropdown-item" href="currencyconversion.html">Currency</a></li>
+              <li><a class="dropdown-item" href="volumeconversion.html">Volume</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">History</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="history.html">Length History</a></li>
+              <li><a class="dropdown-item" href="history.html">Area History</a></li>
+              <li><a class="dropdown-item" href="history.html">Temperature History</a></li>
+              <li><a class="dropdown-item" href="history.html">Mass History</a></li>
+              <li><a class="dropdown-item" href="history.html">Currency History</a></li>
+              <li><a class="dropdown-item" href="history.html">Volume History</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#Article" role="button" data-bs-toggle="dropdown">Article</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html#Article">The S.I System</a></li>
+              <li><a class="dropdown-item" href="index.html#Article">Metric System</a></li>
+              <li><a class="dropdown-item" href="index.html#Article">The Meter</a></li>
+              <li><a class="dropdown-item" href="index.html#Article">Traditional U.S Units</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="FAQs.html">FAQs</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <h1>Currency Conversion Cards</h1>
+    <div class="row">
+      <!-- USD to EUR -->
+      <div class="col-md-12 conversion-card">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">USD to EUR</h5>
+            <input type="number" class="form-control mb-3" id="usdValue" placeholder="Enter value in USD">
+            <div class="center">
+              <button class="btn btn-primary" style="background-color: #e97d18;"
+                onclick="convertUsdToEur()">Convert</button>
+              <button class="btn-clear ml-2" onclick="clearUsd()">Clear</button>
+            </div>
+            <p class="mt-3" style="color: black;">Converted Value: <span id="usdResult">0</span> EUR</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- EUR to USD -->
+      <div class="col-md-12 conversion-card">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">EUR to USD</h5>
+            <input type="number" class="form-control mb-3" id="eurValue" placeholder="Enter value in EUR">
+            <div class="center">
+              <button class="btn btn-primary" style="background-color: #e97d18;"
+                onclick="convertEurToUsd()">Convert</button>
+              <button class="btn-clear ml-2" onclick="clearEur()">Clear</button>
+            </div>
+            <p class="mt-3" style="color: black;">Converted Value: <span id="eurResult">0</span> USD</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GBP to INR -->
+      <div class="col-md-12 conversion-card">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">GBP to INR</h5>
+            <input type="number" class="form-control mb-3" id="gbpValue" placeholder="Enter value in GBP">
+            <div class="center">
+              <button class="btn btn-primary" style="background-color: #e97d18;"
+                onclick="convertGbpToInr()">Convert</button>
+              <button class="btn-clear ml-2" onclick="clearGbp()">Clear</button>
+            </div>
+            <p class="mt-3" style="color: black;">Converted Value: <span id="gbpResult">0</span> INR</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INR to GBP -->
+      <div class="col-md-12 conversion-card">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">INR to GBP</h5>
+            <input type="number" class="form-control mb-3" id="inrValue" placeholder="Enter value in INR">
+            <div class="center">
+              <button class="btn btn-primary" style="background-color: #e97d18;"
+                onclick="convertInrToGbp()">Convert</button>
+              <button class="btn-clear ml-2" onclick="clearInr()">Clear</button>
+            </div>
+            <p class="mt-3" style="color: black;">Converted Value: <span id="inrResult">0</span> GBP</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <section class="footer-section">
+      <div class="container text-center text-md-start">
+        <div class="row">
+          <div class="col-md-3 col-lg-3 col-xl-3 mb-4 footer-links">
+            <h6><i class="fas fa-exchange-alt"></i> Conversion</h6>
+            <p><a href="Length converstion.html">Length Conversion</a></p>
+            <p><a href="areaconversion.html">Area Conversion</a></p>
+            <p><a href="volumeconversion.html">Volume Conversion</a></p>
+            <p><a href="massconversion.html">Mass Conversion</a></p>
+            <p><a href="Tempconversion.html">Temperature Conversion</a></p>
+            <p><a href="currencyconversion.html">Currency Conversion</a></p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mb-4 footer-links">
+            <h6><i class="fas fa-history"></i> History</h6>
+            <p><a href="history.html">Length History</a></p>
+            <p><a href="history.html">Area History</a></p>
+            <p><a href="history.html">Volume History</a></p>
+            <p><a href="history.html">Mass History</a></p>
+            <p><a href="history.html">Temperature History</a></p>
+            <p><a href="history.html">Currency History</a></p>
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mb-4 footer-links">
+            <h6><i class="fas fa-book"></i> Articles</h6>
+            <p><a href="index.html">The S.I System</a></p>
+            <p><a href="index.html">Metric System</a></p>
+            <p><a href="index.html">Traditional U.S Units</a></p>
+          </div>
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mb-md-0 mb-4 contact-info">
+            <h6><i class="fas fa-envelope"></i> Contact Us</h6>
+            <p><i class="fas fa-home"></i> 1234 Main St, City, Country</p>
+            <p><i class="fas fa-envelope"></i> info@example.com</p>
+            <p><i class="fas fa-phone"></i> +01 234 567 88</p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mb-4">
+            <h6><i class="fas fa-question-circle"></i> Follow Us</h6>
+            <div class="social-icons mt-3">
+              <a href="https://www.facebook.com" target="_blank" class="social-icon"><i
+                  class="fab fa-facebook-f"></i></a>
+              <a href="https://www.youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.instagram.com" target="_blank" class="social-icon"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+
+  <script>
+    function convertUsdToEur() {
+      var usd = document.getElementById("usdValue").value;
+      var result = usd * 0.85;
+      document.getElementById("usdResult").innerText = result.toFixed(2);
+    }
+
+    function convertEurToUsd() {
+      var eur = document.getElementById("eurValue").value;
+      var result = eur * 1.18;
+      document.getElementById("eurResult").innerText = result.toFixed(2);
+    }
+
+    function convertGbpToInr() {
+      var gbp = document.getElementById("gbpValue").value;
+      var result = gbp * 101.50;
+      document.getElementById("gbpResult").innerText = result.toFixed(2);
+    }
+
+    function convertInrToGbp() {
+      var inr = document.getElementById("inrValue").value;
+      var result = inr * 0.0099;
+      document.getElementById("inrResult").innerText = result.toFixed(2);
+    }
+
+    function clearUsd() {
+      document.getElementById("usdValue").value = "";
+      document.getElementById("usdResult").innerText = "0";
+    }
+
+    function clearEur() {
+      document.getElementById("eurValue").value = "";
+      document.getElementById("eurResult").innerText = "0";
+    }
+
+    function clearGbp() {
+      document.getElementById("gbpValue").value = "";
+      document.getElementById("gbpResult").innerText = "0";
+    }
+
+    function clearInr() {
+      document.getElementById("inrValue").value = "";
+      document.getElementById("inrResult").innerText = "0";
+    }
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
